@@ -1,40 +1,47 @@
-# this solution has time complexity issue
+# we will move outwards, left and right from a middle pointer to make sure substring is palindrome
+# time complexity O(n^2)
 class Solution:
+    def getPalindrome(self, s, sLength, l, r):
+        palindromicString = ''
+        palindromeLength = sLength
+        
+        while l >= 0 and r < len(s) and s[l] == s[r]:
+            if (r - l + 1) > palindromeLength:
+                palindromicString = s[l:r+1]
+                palindromeLength = r - l + 1
+            l -= 1
+            r += 1
+            
+        return {"palindrome": palindromicString, "palindromeLength": palindromeLength}
+    
     def longestPalindrome(self, s: str) -> str:
-        forwardString = None
-        reverseString = None
-        palindromicString = None
+        palindromicString = ''
+        palindromeLength = 0
         
-        if len(s) == 1:
-            return s 
-        elif s is None:
-            return '' 
-        
-        charCount = 0
-        
-        while charCount < len(s):
-            tempString = ''
+        for i in range(len(s)):
+            # handling odd length string
+            l, r = i, i
             
-            if palindromicString is not None and (len(palindromicString) == len(s) or len(palindromicString) >= (len(s)-charCount)): 
-                return palindromicString
+            response = self.getPalindrome(s, palindromeLength, l, r)
+
+            if response['palindrome'] != '':
+                palindromicString = response['palindrome']
+                palindromeLength = response['palindromeLength']
+                
+            # handling even length string
+            l, r = i, i+1
             
-            for i in range(charCount, len(s), 1):
-                
-                # print(i)
-                tempString = tempString + s[i]
-                forwardString = tempString 
-                reverseString = tempString[::-1]       
-                
-                if forwardString == reverseString and (palindromicString is None or len(forwardString) > len(palindromicString)):
-                    palindromicString = forwardString
-                    
-            charCount += 1
+            response = self.getPalindrome(s, palindromeLength, l, r)
+
+            if response['palindrome'] != '':
+                palindromicString = response['palindrome']
+                palindromeLength = response['palindromeLength']             
                         
         return palindromicString
 
 
 # inputString = "babad"
-# inputString = "aacabdkacaa"
+# inputString = "aacabdkdacaa"
 
 # inputString = "ibawpzhrunsgfobmenlqlxnprtgijgbeicsuoihnmcekzmvtffmlpzuwlimuuzjhkzppmpqqrfwyrjrsltkypjpcjffpvhtdiwjdonutobpecsiqubiusvwsyhrddqjeqqpgofifmwvmcdjixjvjxrvyabqaqumfqiiqxizmhzevhxutsbgzcfggyyvolwaxfcpjhfpksxvgyxhddcssnxhygzvmyxrxqizzhpluxkautjmieximoskcffimctsfzgmihtoxkltopwobtfjvjymtuknxmsgevkeklprcaudidywwkfuhtatpeeiewczpwiegmpjquayfleczrvzekikbaeocpcurtxhcsysbbsyschxtrucpcoeabkikezvrzcelfyauqjpmgeiwpzcweieeptathufkwwydiduacrplkekvegsmxnkutmyjvjftbowpotlkxothimgzfstcmiffcksomixeimjtuakxulphzziqxrxymvzgyhxnsscddhxygvxskpfhjpcfxawlovyyggfczgbstuxhvezhmzixqiiqfmuqaqbayvrxjvjxijdcmvwmfifogpqqejqddrhyswvsuibuqiscepbotunodjwidthvpffjcpjpyktlsrjrywfrqqpmppzkhjzuumilwuzplmfftvmzkecmnhiousciebgjigtrpnxlqlnembofgsnurhzpwabi"
 inputString = "uhrfjotnewtodhmbplsaolnpcdaohiytmfllukijouxipvqohtsgxbtfoxyfkfczkfwhzimbefiohmtimrcxbpgcxogystdkcqujvbxsgirpccdnvejtljftwkdpsqpflzwruwwdzovsbmwbcvlftkjnxqaguvtsycylqzquqkbnybnbaeahbxejhphwrpmymcemuhljwtuvxefqfzjhskuqhifydkxpnfwfxkpeexnjltfqwfvchphmtsrsyayxukvmlqodshqwbeaxhcxdbssnrdzvxtusngwqdxvluauphmmbwmgtazjwvolenegwbmjfwprfuswamyvgrgshqocnhirgyakbkkggviorawadzhjipjjgiwpelwxvtaegauerbwpalofrbghfhnublttqtcmqskcocwwwxpnckrnbepusjyohsrretrqyvgnbezuvwmzizcefxyumtdwnqjkgsktyuacfpnqocqjxcurmipjfqmjqrkdeqsfseyigqlwmzgqhivbqalcxhlzgtsfjbdbfqiedogrqasgmimifdexbjjpfusxsypxobxjtcwxnkpgkdpgskgkvezkriixpxkkattyplnpdbdifforxozfngmlgcunbnubzamgkkfbswuqfqrvzjqmlfqxeqpjaqayodtetsecmfbplscmslpqiyhhykftzkkhshxqvdwmwowokpluwyvavwvofwqtdilwqjgrprukzyhckuspyzaoe"
@@ -47,5 +54,5 @@ result = solutionString.longestPalindrome(inputString)
 
 if result is not None: 
     print(len(result))
-    print(f"[{result}] is the Palindrom substring of the string [{inputString}]")
-else: print(f"No Palindrom substring found for the string [{inputString}]")
+    print(f"[{result}] < == is the Palindrom substring of the string ==> [{inputString}]")
+else: print(f"No Palindrom substring found for the string ==> [{inputString}]")
