@@ -23,6 +23,3 @@ Explanation: There are three ways to climb to the top.
 Constraints:
 
 1 <= n <= 45
-
-Solution Reference:
-https://leetcode.com/problems/climbing-stairs/discuss/25299/Basically-it's-a-fibonacci.

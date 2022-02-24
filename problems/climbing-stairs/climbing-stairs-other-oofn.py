@@ -6,6 +6,8 @@ class Solution:
         return b
     
 # --------------------------------------------------------------------------------------------------------------
+# https://youtu.be/Y0lT9Fck7qI
+# --------------------------------------------------------------------------------------------------------------
 # Dynamic programming - dp[i] = dp[i-1] + dp[i-2] (Similar to Fibonacci series)
 # Generalization for any step size - For steps = {1, 3, 5} formula would be dp[i] = dp[i-1] + dp[i-3] + dp[i-5]
 
