@@ -10,7 +10,7 @@ class Solution:
             return 0
         
         level = 0
-        stack = deque([root])
+        stack = deque([root]) # queue
         
         while stack:
             for i in range(len(stack)):
