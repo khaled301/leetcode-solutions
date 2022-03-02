@@ -13,20 +13,5 @@ class Solution:
             
         return maxProfit
     
-    
-
-        # if not prices or len(prices) == 1:
-        #     return 0
-        
-        # l, r = 0, 1
-        # maxProfit = 0
-        # for i in range(len(prices)):
-        #     if r < len(prices):
-        #         if prices[r] > prices[l]:
-        #             maxProfit = max((prices[r] - prices[l]) , maxProfit)
-        #             r = i+1
-        #         else:
-        #             l = r
-        #             r = l+1
-
-        # return maxProfit
+# time = O(n)
+# space = O(1)
