@@ -40,3 +40,7 @@ Move both fast and slow pointers one step at a time until fast reaches the end o
 
 ### Remove the Target Node: 
 The slow pointer will now be just before the node to be removed. Adjust the next pointer of slow to skip the target node.
+
+
+## Time and Space Complexities:
+This approach runs in **O(L)** time complexity, where L is the length of the linked list, and **O(1)** space complexity, as it only uses a few pointers.
