@@ -45,8 +45,7 @@ Sum[1, 3] = P[3] - P[0] = 20 - 2 = 18
 Answer: 18
 
 ```bash
-def create_prefix_sum(arr):
-    sum = 0
+def create_prefix_sum_array(arr):
     for i in range(1, len(arr)):
         arr[i] += arr[i-1]
     return arr 
