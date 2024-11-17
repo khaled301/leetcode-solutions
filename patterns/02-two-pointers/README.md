@@ -1,10 +1,5 @@
 # Two-Pointer Technique
-11
-15
-167
-16. 3Sum Closest
-18. 4Sum
-259. 3Sum Smaller
+11, 15, 167, 16. 3Sum Closest, 18. 4Sum, 259. 3Sum Smaller
 
 ## Overview
 The two-pointer technique is a common algorithmic strategy that uses two indices (pointers) to traverse an array or a string. This technique is particularly useful for solving problems related to searching, sorting, and finding pairs or subarrays that satisfy certain conditions.
