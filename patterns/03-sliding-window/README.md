@@ -1,5 +1,7 @@
 # Sliding Window Technique
-The sliding window technique is a powerful algorithmic strategy used to solve problems involving arrays or lists. This technique is particularly useful when you need to find a subset of elements that meet certain conditions, such as finding the maximum sum of a subarray of fixed size or detecting a pattern.
+A sliding window is a technique where we maintain a window (a range of elements) that satisfies a certain condition and slide it over the data structure to find all possible windows that meet the criteria.
+
+The sliding window technique is a powerful algorithmic strategy used to solve problems involving arrays or lists. This technique is particularly useful when we need to find a subset of elements that meet certain conditions, such as finding the maximum sum of a subarray of fixed size or detecting a pattern.
 It helps to reduce time complexity from O(n * k) to O(n) since we will be using single loop.
 
 **Leet Problems**: 643, 3, 76
