@@ -42,7 +42,20 @@ class Solution:
                 
         return []
 
+    def palindrome(self, str: string) -> boolean:
+        l, r, n = 0, len(str) - 1, len(str)
+
+        while l < r:
+            if str[l] != str[r]:
+                return false
+            l += 1
+            r -= 1
+
+        return true
+
 # Example usage
 solution = Solution()
 print(solution.twoSum([2, 7, 11, 15], 9))  # Output: [1, 2]
 print(solution.twoSum([1, 2, 3, 4, 4, 9, 56, 90], 8))  # Output: [4, 5]
+print(solution.palindrome("racecar"))  # Output: True
+print(solution.palindrome("hello"))  # Output: False
