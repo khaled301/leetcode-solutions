@@ -18,7 +18,7 @@ class Solution:
         return maxLen
 
     def newLengthOfLongestSubstring(self, s: str) -> int:
-        l, maxLen, charSet = 0 , 0, set()
+        l, maxLen, charSet = 0, 0, set()
         
         for r in range(len(s)):
             while s[r] in charSet:
