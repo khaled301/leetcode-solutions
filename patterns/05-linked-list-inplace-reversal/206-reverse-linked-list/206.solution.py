@@ -40,5 +40,5 @@ class Solution:
         # As the node 3 -> has a previous references of node 13, we can set the node 3 ->'s previous reference to None
         head.next = None 
         
-        # Return the reversedHead (1st: 13->None, 2nd: 13->3->None, 3rd: 13->3->1->None)
+        # Return the reversedHead ( 2nd: 13->3->None, 3rd: 13->3->1->None)
         return reversedHead
