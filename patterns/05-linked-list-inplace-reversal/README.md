@@ -3,6 +3,8 @@
 The Linked List In-place Reversal technique is a powerful approach for solving problems that require modifying or reversing portions of a linked list directly. This technique is widely used in interview problems to reverse sublists or perform specific operations on linked lists efficiently.
 
 ---
+**Leet Problems**: 206, 92, 24, 143 
+---
 
 ## **Key Concepts**
 - **Inplace Reversal:** Reverses the nodes of a linked list without using extra space for another data structure.
