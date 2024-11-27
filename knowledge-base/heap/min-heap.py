@@ -15,6 +15,9 @@ class Heap:
     def getParentIndex(self, childIndex):
         return (childIndex - 1) // 2
     
+    def getLastParentNodeIndex(self):
+        return (self.size // 2) - 1
+    
     def hasLeftChild(self, index):
         tempIndex = self.getLeftChildIndex(index)
         return tempIndex >= 0 and tempIndex < self.size
@@ -43,6 +46,7 @@ class Heap:
         if index1 < 0 or index1 >= self.size or index2 < 0 or index2 >= self.size:
             raise Exception("Invalid indices")
         
+        # self.heap[index1], self.heap[index2] = self.heap[index2], self.heap[index1]
         temp = self.heap[index1]
         self.heap[index1] = self.heap[index2]
         self.heap[index2] = temp
@@ -89,10 +93,12 @@ class Heap:
                 self.swap(tempIndex, smallerChildIndex)
                 
             tempIndex = smallerChildIndex
-    
-    
+
+
 if __name__ == "__main__":
-    heap = Heap([10, 15, 20, 17])
+    heap = Heap([3, 2, 1, 5, 6, 4])
+    heap.minHeapifyDown()
+    print(heap.getHeap())
     
     print(heap.peek())
     print(heap.poll())
