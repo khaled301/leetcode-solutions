@@ -1,5 +1,4 @@
 from typing import List
-import heapq
 
 class Solution:
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
