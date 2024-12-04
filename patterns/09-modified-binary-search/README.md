@@ -4,7 +4,7 @@
 
 ---
 
-**Leet Problems**: 33, 153, 240
+**Leet Problems**: 33, 153, 74, 240
 
 - Searching in a nearly sorted array
 - Search in a rotated sorted array
