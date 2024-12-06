@@ -1,18 +1,4 @@
 
-"""
-    Problem Leet 145: Given the root of a binary tree, return the post traversal of its nodes' values.
-    
-    1) Postorder[left -> right -> root] traversal
-    
-    2) Note that this traversal is similar to the reverse of the "preorder (Root -> Left -> Right)" traversal 
-    
-    3) So the trick would be to do the preorder traversal and reverse the result
-    4) Only catch is that we have to store the left node in the stack instead of the right node
-    5) And traverse the right node before the left node
-    6) At the end, reverse the result
-    
-    7) Think of it as "Root -> Right -> Left" and then reverse it to get the original form "Left -> Right -> Root" (final result)
-"""
 
 from typing import Optional, List
 
@@ -24,6 +10,50 @@ class TreeNode:
         self.right = right
 class Solution:
     def postorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        stack, visited, res = [root], [False], []
+
+        while stack:
+            cur, v = stack.pop(), visited.pop()
+            
+            # When the current popped node is not None 
+            # for child node the two left and right nodes can be None
+            if cur:
+                if v:
+                    res.append(cur.val)
+                else:
+                    # 03 - we have to pop the parent node last (L - > R - > [Root]) from the stack Stack
+                    stack.append(cur)
+                    
+                    # here we mark the current node as visited because 
+                    # it is the popped node from the top of the stack
+                    # and we don't want to visit it again
+                    visited.append(True)
+                    
+                    # 02 - we have to pop the right node second (L - > [R] - > Root) from the stack Stack
+                    stack.append(cur.right)
+                    visited.append(False)
+                    
+                    # 01  - we have to pop the left node first ([L] - > R - > Root) from the stack Stack  
+                    stack.append(cur.left)
+                    visited.append(False)
+                
+        return res
+    
+    """
+        Problem Leet 145: Given the root of a binary tree, return the post traversal of its nodes' values.
+        
+        1) Postorder[left -> right -> root] traversal
+        
+        2) Note that this traversal is similar to the reverse of the "preorder (Root -> Left -> Right)" traversal 
+        
+        3) So the trick would be to do the preorder traversal and reverse the result
+        4) Only catch is that we have to store the left node in the stack instead of the right node
+        5) And traverse the right node before the left node
+        6) At the end, reverse the result
+        
+        7) Think of it as "Root -> Right -> Left" and then reverse it to get the original form "Left -> Right -> Root" (final result)
+    """
+    def postorderTraversalWithTrick(self, root: Optional[TreeNode]) -> List[int]:
         cur, stack, res = root, [], []
 
         while cur or stack:
