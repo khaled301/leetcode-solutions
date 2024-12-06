@@ -12,7 +12,7 @@
 124. Binary Tree Maximum Path Sum - Postorder
     - 145 
 107. Binary Tree Level Order Traversal II - Level Order
-    - 102 (https://www.youtube.com/watch?v=6ZnyEApgFYg)
+    - 102
 
 ---
 

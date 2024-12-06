@@ -4,6 +4,7 @@
 """
 
 from typing import Optional, List
+from collections import deque
 
 # Definition for a binary tree node.
 class TreeNode:
@@ -26,22 +27,24 @@ class Solution:
             # for instance, initial level size is 1
             lvlSize = len(queue)
             
-            # store the new child levels in curLvl list after 
-            # each iteration of the lvlSize loop
-            # it helps to store the nodes of each level from left to right
+            # it helps to store the visited nodes values of each level from left to right
             curLvl = []
             
             # loop through the current level size
             for _ in range(lvlSize):
                 # dequeue (from the left/beginning) the node from the queue 
                 node = queue.popleft()
+                
+                # append the node value of the current level to the list
                 curLvl.append(node.val)
 
+                # append the left node first and then the right node to the queue
                 if node.left:
                     queue.append(node.left)
                 if node.right:
                     queue.append(node.right)
                 
+            # append the current level to the result
             res.append(curLvl)
 
         return res
