@@ -8,9 +8,9 @@
 257. Binary Tree Paths - Preorder
     - 144
 230. Kth Smallest Element in a BST - Inorder
-    - 94 (https://www.youtube.com/watch?v=g_S5WuasWUE)
+    - 94 
 124. Binary Tree Maximum Path Sum - Postorder
-    - 145 (https://www.youtube.com/watch?v=QhszUQhGGlA)
+    - 145 
 107. Binary Tree Level Order Traversal II - Level Order
     - 102 (https://www.youtube.com/watch?v=6ZnyEApgFYg)
 
