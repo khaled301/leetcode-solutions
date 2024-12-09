@@ -44,3 +44,10 @@ In this traversal, the left subtree is visited first, followed by the right subt
 In this traversal, the root node is visited first, followed by the left subtree, and finally the right subtree.
 
 
+        10
+       /  \
+      2    10
+     / \     \
+    20  1    -25
+             /  \
+            3    4
