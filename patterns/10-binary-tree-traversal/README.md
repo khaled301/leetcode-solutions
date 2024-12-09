@@ -1,18 +1,21 @@
 # Binary Tree Traversal Technique
 
-
+By definition a binary search tree is **"inorder"**, means the `left` subtree is ***smaller*** than the root node and the `right` subtree is ***greater*** than the root node. 
 
 ---
 
 **Leet Problems**: 
 257. Binary Tree Paths - Preorder
-    - 144
+- (144) (knowledge-base)
+
 230. Kth Smallest Element in a BST - Inorder
-    - 94 
+- (94) (knowledge-base)
+
 124. Binary Tree Maximum Path Sum - Postorder
-    - 145 
+- (145) (knowledge-base)
+
 107. Binary Tree Level Order Traversal II - Level Order
-    - 102
+- (102) (knowledge-base)
 
 ---
 
