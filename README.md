@@ -1,6 +1,6 @@
 # LeetCode Solutions
 
-This repository contains solutions and my approaches to various LeetCode problems. Each solution is organized into folders, with each problem having its own `README.md` file detailing the approach, solution, and examples used for that particular problem.
+This repository contains solutions and approaches to various LeetCode problems. Each solution is organized into folders, with each problem having its own `README.md` file detailing the approach, solution, and examples used for that particular problem.
 
 ## Repository Structure
 
